@@ -1,27 +1,90 @@
 {
-  "name": "aws-infrastructure",
+  "name": "@justinm/cdk-constructs",
   "version": "0.1.0",
-  "bin": {
-    "aws-infrastructure": "bin/aws-infrastructure.js"
+  "license": "MIT",
+  "author": {
+    "name": "Justin McCormick",
+    "email": "me@justinmccormick.com",
+    "url": "https://justinmccormick.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinm/cdk-constructs.git"
+  },
+  "main": "lib/index.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "test": "jest",
-    "cdk": "cdk"
+    "build": "cdkdx build",
+    "watch": "cdkdx build -w",
+    "test": "cdkdx test",
+    "lint": "cdkdx lint",
+    "upgrade:cdk": "cdkdx upgrade-cdk",
+    "package": "cdkdx package",
+    "docgen": "cdkdx docgen",
+    "release:npm": "cdkdx release npm",
+    "release:pypi": "cdkdx release pypi"
+  },
+  "files": [
+    "lib"
+  ],
+  "jsii": {
+    "outdir": "dist",
+    "tsc": {
+      "outDir": "lib",
+      "rootDir": "src"
+    },
+    "excludeTypescript": [
+      "src/lambdas"
+    ],
+    "targets": {
+      "python": {
+        "distName": "justinm.cdk-constructs",
+        "module": "justinm.constructs"
+      }
+    }
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.110.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "aws-cdk": "1.110.0",
+    "cdkdx": "^1.1.0",
+    "eslint-config-cdk": "^1.0.0",
+    "eslint-plugin-cdk": "^1.0.2",
+    "eslint-plugin-jest": "^24.3.6",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
-    "aws-cdk": "1.110.0",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
+    "@aws-cdk/aws-budgets": "^1.110.0",
+    "@aws-cdk/aws-cloudtrail": "^1.110.0",
+    "@aws-cdk/aws-cloudwatch": "^1.110.0",
+    "@aws-cdk/aws-ec2": "^1.110.0",
+    "@aws-cdk/aws-iam": "^1.110.0",
+    "@aws-cdk/aws-logs": "^1.110.0",
+    "@aws-cdk/aws-route53": "^1.110.0",
+    "@aws-cdk/aws-s3": "^1.110.0",
+    "@aws-cdk/aws-sns": "^1.110.0",
     "@aws-cdk/core": "1.110.0",
     "source-map-support": "^0.5.16"
-  }
+  },
+  "peerDependencies": {
+    "@aws-cdk/aws-budgets": "^1.110.0",
+    "@aws-cdk/aws-cloudtrail": "^1.110.0",
+    "@aws-cdk/aws-cloudwatch": "^1.110.0",
+    "@aws-cdk/aws-ec2": "^1.110.0",
+    "@aws-cdk/aws-iam": "^1.110.0",
+    "@aws-cdk/aws-logs": "^1.110.0",
+    "@aws-cdk/aws-route53": "^1.110.0",
+    "@aws-cdk/aws-s3": "^1.110.0",
+    "@aws-cdk/aws-sns": "^1.110.0",
+    "@aws-cdk/core": "1.110.0"
+  },
+  "bundleDependencies": [
+    "source-map-support"
+  ]
 }

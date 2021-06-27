@@ -1,14 +1,26 @@
-# Welcome to your CDK TypeScript project!
+# justinm/cdk-constructs
 
-This is a blank project for TypeScript development with CDK.
+... a collection of CDK constructs for managing AWS infrastructure.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+![Build Status](https://github.com/justinm/cdk-constructs/actions/workflows/build.yml/badge.svg)
+![License](https://img.shields.io/github/license/justinm/cdk-constructs)
+![Node](https://img.shields.io/node/v/@justinm/cdk-constructs/latest)
+![Python](https://img.shields.io/pypi/pyversions/justinm.cdk-constructs)
 
-## Useful commands
+## Installing
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+NodeJS
+```shell
+yarn add @justinm/cdk-constructs
+
+npm install @justinm/cdk-constructs
+```
+
+Python
+```shell
+pip3 install justinm.cdk-constructs
+```
+
+## API
+
+Construct APIs are available [here](./API.md).

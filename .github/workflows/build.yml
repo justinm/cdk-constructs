@@ -35,12 +35,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-      - name: Installing Dependencies
-        run: yarn install --immutable
-      - name: Building Source
-        run: yarn build
-      - name: Building Docs
-        run: yarn docgen
 
       - name: "Automated Version Bump"
         id: bump_version
@@ -49,6 +43,13 @@ jobs:
           tag-prefix: 'v'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Installing Dependencies
+        run: yarn install --immutable
+      - name: Building Source
+        run: yarn build
+      - name: Building Docs
+        run: yarn docgen
 
       - name: Packaging
         run: yarn package

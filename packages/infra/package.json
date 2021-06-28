@@ -38,8 +38,8 @@
     ],
     "targets": {
       "python": {
-        "distName": "justinm.cdk-constructs",
-        "module": "justinm.constructs"
+        "distName": "justinm.cdk-infra",
+        "module": "justinm.cdk_infra"
       }
     }
   },

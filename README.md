@@ -11,16 +11,15 @@
 
 NodeJS
 ```shell
-yarn add @justinm/cdk-constructs
+yarn add @justinm/cdk-accounts
+yarn add @justinm/cdk-infra
 
-npm install @justinm/cdk-constructs
+npm install @justinm/cdk-accounts
+npm install @justinm/cdk-infra
 ```
 
 Python
 ```shell
-pip3 install justinm.cdk-constructs
+pip3 install justinm.cdk-accounts
+pip3 install justinm.cdk-infra
 ```
-
-## API
-
-Construct APIs are available [here](./API.md).

@@ -3,14 +3,14 @@ import { Effect } from '@aws-cdk/aws-iam';
 import { SamlMetadataDocument } from '@aws-cdk/aws-iam/lib/saml-provider';
 import * as cdk from '@aws-cdk/core';
 
-export interface AwsOktaSamlProps {
+export interface OktaSamlStackProps {
   readonly metadataDocument?: SamlMetadataDocument;
   readonly developerPolicies?: iam.PolicyStatement[];
   readonly adminForDeveloper?: boolean;
 }
 
 export class OktaSamlStack extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string, props: AwsOktaSamlProps) {
+  constructor(scope: cdk.Construct, id: string, props: OktaSamlStackProps) {
     super(scope, id);
 
     const oktaUser = new iam.User(this, 'OktaUser', {

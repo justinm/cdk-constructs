@@ -18,14 +18,14 @@
     "packages/**/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach -p cdkdx build",
-    "test": "yarn workspaces foreach -p cdkdx test",
-    "lint": "yarn workspaces foreach -p cdkdx lint",
-    "upgrade:cdk": "yarn workspaces foreach cdkdx upgrade-cdk",
-    "package": "yarn workspaces foreach -p cdkdx package",
-    "docgen": "yarn workspaces foreach -p cdkdx docgen",
-    "release:npm": "yarn workspaces foreach -p cdkdx release npm",
-    "release:pypi": "yarn workspaces foreach -p cdkdx release pypi"
+    "build": "yarn workspaces foreach -p run build",
+    "test": "yarn workspaces foreach -p run test",
+    "lint": "yarn workspaces foreach run lint",
+    "upgrade:cdk": "yarn workspaces foreach run upgrade-cdk",
+    "package": "yarn workspaces foreach -p run package",
+    "docgen": "yarn workspaces foreach -p run docgen",
+    "release:npm": "yarn workspaces foreach -p run release:npm",
+    "release:pypi": "yarn workspaces foreach -p run release:pypi"
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",

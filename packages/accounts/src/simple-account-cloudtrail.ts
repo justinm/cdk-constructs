@@ -8,7 +8,7 @@ export class SimpleAccountCloudTrail extends cdk.Construct {
     super(scope, id);
 
     const cloudTrailBucket = new s3.Bucket(this, 'CloudTrail');
-    const {account} = cdk.Stack.of(this);
+    const { account } = cdk.Stack.of(this);
 
     cloudTrailBucket.addToResourcePolicy(
       new iam.PolicyStatement({

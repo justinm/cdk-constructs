@@ -2,11 +2,14 @@
 !jest.config.js
 *.d.ts
 node_modules
+.jsii
 
 # CDK asset staging directory
 .cdk.staging
 cdk.out
 
+tsconfig.eslint.json
+tsconfig.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/yarn,node,intellij+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=yarn,node,intellij+all

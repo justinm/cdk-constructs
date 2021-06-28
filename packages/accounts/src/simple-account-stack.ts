@@ -1,9 +1,9 @@
 import * as cdk from '@aws-cdk/core';
+import { OktaSamlStack, OktaSamlStackProps } from './okta-saml-stack';
 import { SimpleAccountBudgetsStack, SimpleAccountBudgetsStackProps } from './simple-account-budgets-stack';
 import { SimpleAccountCloudTrail } from './simple-account-cloudtrail';
-import { OktaSamlStack, AwsOktaSamlProps } from './okta-saml-stack';
 
-export interface SimpleAccountStackProps extends cdk.StackProps, SimpleAccountBudgetsStackProps, AwsOktaSamlProps {}
+export interface SimpleAccountStackProps extends cdk.StackProps, SimpleAccountBudgetsStackProps, OktaSamlStackProps {}
 
 export class SimpleAccountStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props: SimpleAccountStackProps) {

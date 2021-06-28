@@ -1909,6 +1909,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@qiwi/multi-semantic-release@npm:^3.14.2":
+  version: 3.14.2
+  resolution: "@qiwi/multi-semantic-release@npm:3.14.2"
+  dependencies:
+    blork: ^9.3.0
+    cosmiconfig: ^7.0.0
+    debug: ^4.3.1
+    detect-indent: ^6.0.0
+    detect-newline: ^3.1.0
+    execa: ^5.0.0
+    get-stream: ^6.0.0
+    git-log-parser: ^1.2.0
+    globby: 11.0.2
+    lodash: ^4.17.20
+    meow: ^9.0.0
+    promise-events: ^0.2.2
+    semantic-release: ^17.3.7
+    semver: ^7.3.4
+    signale: ^1.4.0
+    stream-buffers: ^3.0.2
+    tempy: ^1.0.0
+  bin:
+    multi-semantic-release: bin/cli.js
+  checksum: 39c1f6dcdc2a1c22e81b1fbfb41e9d06d7da9afdf8575aec314c0d4bd7817a80c2d33ac19f0b560c2fb04abcc0d170c6a134a2537a32bedeaa2dd48713f14d44
+  languageName: node
+  linkType: hard
+
 "@semantic-release/commit-analyzer@npm:^8.0.0, @semantic-release/commit-analyzer@npm:^8.0.1":
   version: 8.0.1
   resolution: "@semantic-release/commit-analyzer@npm:8.0.1"
@@ -1926,10 +1953,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/error@npm:^2.2.0":
+"@semantic-release/error@npm:^2.1.0, @semantic-release/error@npm:^2.2.0":
   version: 2.2.0
   resolution: "@semantic-release/error@npm:2.2.0"
   checksum: 96502012d8676def27ad904c23b4039cfcdaf2e82e86e6f51155dc391427e082da59e6d2c9eb653c87f1506af6b5c9468bc4261b476ad3bf13f310dc2245fe5d
+  languageName: node
+  linkType: hard
+
+"@semantic-release/exec@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@semantic-release/exec@npm:5.0.0"
+  dependencies:
+    "@semantic-release/error": ^2.1.0
+    aggregate-error: ^3.0.0
+    debug: ^4.0.0
+    execa: ^4.0.0
+    lodash: ^4.17.4
+    parse-json: ^5.0.0
+  peerDependencies:
+    semantic-release: ">=16.0.0 <18.0.0"
+  checksum: dcfc309cbc6700617d956889f081c4ff4dd00e0d15621d981a5dfabc9e34e6f692b79e8876c6b61ca2b21f6e9a06ab36e4a2fcf487a81323c201b1db897a0703
   languageName: node
   linkType: hard
 
@@ -1959,7 +2002,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:^7.0.0":
+"@semantic-release/npm@npm:^7.0.0, @semantic-release/npm@npm:^7.1.3":
   version: 7.1.3
   resolution: "@semantic-release/npm@npm:7.1.3"
   dependencies:
@@ -3522,6 +3565,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"blork@npm:^9.3.0":
+  version: 9.3.0
+  resolution: "blork@npm:9.3.0"
+  checksum: e5a7c5747342792cef0ee797d6eb2abf5bb0b5c11ad8bab7ecb20ccbb08511686eabb662ebf6dfa44348ab3b13419ed448ca5ffb1358e010f7587079fa0ee59f
+  languageName: node
+  linkType: hard
+
 "bluebird@npm:^3.5.1, bluebird@npm:^3.5.3, bluebird@npm:^3.5.5":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
@@ -4046,8 +4096,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "cdk-constructs@workspace:."
   dependencies:
+    "@qiwi/multi-semantic-release": ^3.14.2
     "@semantic-release/commit-analyzer": ^8.0.1
+    "@semantic-release/exec": ^5.0.0
     "@semantic-release/github": ^7.2.3
+    "@semantic-release/npm": ^7.1.3
     "@semantic-release/release-notes-generator": ^9.0.3
     "@types/jest": ^26.0.10
     "@types/node": 10.17.27
@@ -7655,6 +7708,20 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"globby@npm:11.0.2":
+  version: 11.0.2
+  resolution: "globby@npm:11.0.2"
+  dependencies:
+    array-union: ^2.1.0
+    dir-glob: ^3.0.1
+    fast-glob: ^3.1.1
+    ignore: ^5.1.4
+    merge2: ^1.3.0
+    slash: ^3.0.0
+  checksum: d23f2a6b8897b97fb27422cde243e0fd406ebbaa821929293b27c977d169884f8112494cda4f456a51d0ec1e133e3ac703ec24bfed484e327305ea34a665eb06
+  languageName: node
+  linkType: hard
+
 "globby@npm:^11, globby@npm:^11.0.0, globby@npm:^11.0.1, globby@npm:^11.0.3":
   version: 11.0.4
   resolution: "globby@npm:11.0.4"
@@ -11127,7 +11194,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.x, lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
+"lodash@npm:4.x, lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 4983720b9abca930a4a46f18db163d7dad8dd00dbed6db0cc7b499b33b717cce69f80928b27bbb1ff2cbd3b19d251ee90669a8b5ea466072ca81c2ebe91e7468
@@ -11523,6 +11590,26 @@ fsevents@^1.2.7:
     type-fest: ^0.18.0
     yargs-parser: ^20.2.3
   checksum: 7246c3e824298dc1ceddc4b9930bf6a04df8f240d09e76ee180c4f9168df3d6a7d27593a5a3ef7005efbc1557780981e169a7acac56120c7bf2f99f5f54563aa
+  languageName: node
+  linkType: hard
+
+"meow@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "meow@npm:9.0.0"
+  dependencies:
+    "@types/minimist": ^1.2.0
+    camelcase-keys: ^6.2.2
+    decamelize: ^1.2.0
+    decamelize-keys: ^1.1.0
+    hard-rejection: ^2.1.0
+    minimist-options: 4.1.0
+    normalize-package-data: ^3.0.0
+    read-pkg-up: ^7.0.1
+    redent: ^3.0.0
+    trim-newlines: ^3.0.0
+    type-fest: ^0.18.0
+    yargs-parser: ^20.2.3
+  checksum: d1573809d6e3df55ab7b8c49f2ecfb8006664856700b556c794013ef887e47991bf1fef8ba9de60bb4afda9b62136823e4008c7f2cc459a7c036b7b649a42c0d
   languageName: node
   linkType: hard
 
@@ -13648,6 +13735,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"promise-events@npm:^0.2.2":
+  version: 0.2.4
+  resolution: "promise-events@npm:0.2.4"
+  checksum: a732dd7ba38697565eb68f8568bd93422cb402dcec6283e67b64fd6ed4c8adae48ee6e7b22b7bd50b7305fd95d4b26df506f886844aa740986a28bfefd3777f1
+  languageName: node
+  linkType: hard
+
 "promise-inflight@npm:^1.0.1, promise-inflight@npm:~1.0.1":
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
@@ -14735,7 +14829,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:17.4.4, semantic-release@npm:^17.4.4":
+"semantic-release@npm:17.4.4, semantic-release@npm:^17.3.7, semantic-release@npm:^17.4.4":
   version: 17.4.4
   resolution: "semantic-release@npm:17.4.4"
   dependencies:
@@ -14996,7 +15090,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"signale@npm:^1.2.1":
+"signale@npm:^1.2.1, signale@npm:^1.4.0":
   version: 1.4.0
   resolution: "signale@npm:1.4.0"
   dependencies:
@@ -15438,6 +15532,13 @@ fsevents@^1.2.7:
     inherits: ~2.0.1
     readable-stream: ^2.0.2
   checksum: d50d9a28df714f2d599f416388541de445bfa417039a4808a1ca68381f0152205b8e50dbc04e39959b3b1a9c5e561cab1ecb1bdf4f6ab2f66f6b1450000049d9
+  languageName: node
+  linkType: hard
+
+"stream-buffers@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "stream-buffers@npm:3.0.2"
+  checksum: 340a04fc135ac618a3b8c4069b444bf71dd55ac18c6ec1370acd62bad4c0c9f84935b7b10f4b4fac358669855d26dccedc96bc26590cae35be2d68c1620973b0
   languageName: node
   linkType: hard
 

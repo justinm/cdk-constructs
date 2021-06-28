@@ -19,8 +19,8 @@
     "test": "cdkdx test",
     "lint": "cdkdx lint",
     "upgrade:cdk": "cdkdx upgrade-cdk",
-    "package": "cdkdx package",
-    "docgen": "cdkdx docgen",
+    "prepare": "cdkdx docgen && cdkdx package",
+    "release": "yarn release:npm && yarn release:pypi",
     "release:npm": "cdkdx release npm",
     "release:pypi": "cdkdx release pypi"
   },

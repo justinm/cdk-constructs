@@ -7,6 +7,7 @@ export interface OktaSamlStackProps {
   readonly metadataDocument?: SamlMetadataDocument;
   readonly developerPolicies?: iam.PolicyStatement[];
   readonly adminForDeveloper?: boolean;
+  readonly test?: boolean;
 }
 
 export class OktaSamlStack extends cdk.Construct {

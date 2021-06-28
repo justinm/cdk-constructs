@@ -1909,7 +1909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/commit-analyzer@npm:^8.0.0":
+"@semantic-release/commit-analyzer@npm:^8.0.0, @semantic-release/commit-analyzer@npm:^8.0.1":
   version: 8.0.1
   resolution: "@semantic-release/commit-analyzer@npm:8.0.1"
   dependencies:
@@ -1933,7 +1933,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/github@npm:^7.0.0":
+"@semantic-release/github@npm:^7.0.0, @semantic-release/github@npm:^7.2.3":
   version: 7.2.3
   resolution: "@semantic-release/github@npm:7.2.3"
   dependencies:
@@ -1982,7 +1982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/release-notes-generator@npm:^9.0.0":
+"@semantic-release/release-notes-generator@npm:^9.0.0, @semantic-release/release-notes-generator@npm:^9.0.3":
   version: 9.0.3
   resolution: "@semantic-release/release-notes-generator@npm:9.0.3"
   dependencies:
@@ -4046,6 +4046,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "cdk-constructs@workspace:."
   dependencies:
+    "@semantic-release/commit-analyzer": ^8.0.1
+    "@semantic-release/github": ^7.2.3
+    "@semantic-release/release-notes-generator": ^9.0.3
     "@types/jest": ^26.0.10
     "@types/node": 10.17.27
     "@typescript-eslint/eslint-plugin": ^4.28.0

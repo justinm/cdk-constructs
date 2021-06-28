@@ -25,7 +25,8 @@
     "release:pypi": "cdkdx release pypi"
   },
   "files": [
-    "lib"
+    "lib",
+    ".jsii"
   ],
   "jsii": {
     "outdir": "dist",

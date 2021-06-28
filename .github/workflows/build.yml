@@ -36,13 +36,13 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: "Automated Version Bump"
-        id: bump_version
-        uses: "phips28/gh-action-bump-version@master"
-        with:
-          tag-prefix: 'v'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: "Automated Version Bump"
+#        id: bump_version
+#        uses: "phips28/gh-action-bump-version@master"
+#        with:
+#          tag-prefix: 'v'
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Installing Dependencies
         run: yarn install --immutable
@@ -50,23 +50,26 @@ jobs:
         run: yarn build
       - name: Building Docs
         run: yarn docgen
-
+      - name: Bump Version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
       - name: Packaging
         run: yarn package
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ steps.bump_version.outputs.newTag }}
-          files: |
-            API.md
-            README.md
-            LICENSE
-            dist/**/*.tgz
-            dist/**/*.tar.gz
-            dist/**/*.whl
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Release
+#        uses: softprops/action-gh-release@v1
+#        with:
+#          tag_name: ${{ steps.bump_version.outputs.newTag }}
+#          files: |
+#            API.md
+#            README.md
+#            LICENSE
+#            dist/**/*.tgz
+#            dist/**/*.tar.gz
+#            dist/**/*.whl
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set NPM permissions
         run: npm --global config --scope justinm set access public

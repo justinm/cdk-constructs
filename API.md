@@ -4,25 +4,25 @@
 
 Name|Description
 ----|-----------
-[infra.AwsVpc](#justinm-cdk-constructs-infra-awsvpc)|*No description*
-[management.AwsAccountBudgetsStack](#justinm-cdk-constructs-management-awsaccountbudgetsstack)|*No description*
-[management.AwsAccountCloudTrailStack](#justinm-cdk-constructs-management-awsaccountcloudtrailstack)|*No description*
-[management.AwsAccountStack](#justinm-cdk-constructs-management-awsaccountstack)|*No description*
-[management.AwsOktaSamlStack](#justinm-cdk-constructs-management-awsoktasamlstack)|*No description*
+[infra.SimpleVpc](#justinm-cdk-constructs-infra-awsvpc)|*No description*
+[management.SimpleAccountBudgetsStack](#justinm-cdk-constructs-management-awsaccountbudgetsstack)|*No description*
+[management.SimpleAccountCloudTrailStack](#justinm-cdk-constructs-management-awsaccountcloudtrailstack)|*No description*
+[management.SimpleAccountStack](#justinm-cdk-constructs-management-awsaccountstack)|*No description*
+[management.OktaSamlStack](#justinm-cdk-constructs-management-awsoktasamlstack)|*No description*
 
 
 **Structs**
 
 Name|Description
 ----|-----------
-[infra.AwsVpcProps](#justinm-cdk-constructs-infra-awsvpcprops)|*No description*
-[management.AwsAccountBudgetsStackProps](#justinm-cdk-constructs-management-awsaccountbudgetsstackprops)|*No description*
-[management.AwsAccountStackProps](#justinm-cdk-constructs-management-awsaccountstackprops)|*No description*
+[infra.SimpleVpcProps](#justinm-cdk-constructs-infra-awsvpcprops)|*No description*
+[management.SimpleAccountBudgetsStackProps](#justinm-cdk-constructs-management-awsaccountbudgetsstackprops)|*No description*
+[management.SimpleAccountStackProps](#justinm-cdk-constructs-management-awsaccountstackprops)|*No description*
 [management.AwsOktaSamlProps](#justinm-cdk-constructs-management-awsoktasamlprops)|*No description*
 
 
 
-## class AwsVpc  <a id="justinm-cdk-constructs-infra-awsvpc"></a>
+## class SimpleVpc  <a id="justinm-cdk-constructs-infra-awsvpc"></a>
 
 
 
@@ -37,12 +37,12 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 
 
 ```ts
-new infra.AwsVpc(scope: Construct, id: string, props: AwsVpcProps)
+new infra.SimpleVpc(scope: Construct, id: string, props: SimpleVpcProps)
 ```
 
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
-* **props** (<code>[infra.AwsVpcProps](#justinm-cdk-constructs-infra-awsvpcprops)</code>)  *No description*
+* **props** (<code>[infra.SimpleVpcProps](#justinm-cdk-constructs-infra-awsvpcprops)</code>)  *No description*
   * **cidr** (<code>string</code>)  *No description* 
   * **enableNatGateway** (<code>boolean</code>)  *No description* __*Optional*__
   * **maxAxs** (<code>number</code>)  *No description* __*Optional*__
@@ -58,7 +58,7 @@ Name | Type | Description
 
 
 
-## class AwsAccountBudgetsStack  <a id="justinm-cdk-constructs-management-awsaccountbudgetsstack"></a>
+## class SimpleAccountBudgetsStack  <a id="justinm-cdk-constructs-management-awsaccountbudgetsstack"></a>
 
 
 
@@ -73,12 +73,12 @@ __Extends__: [NestedStack](#aws-cdk-core-nestedstack)
 
 
 ```ts
-new management.AwsAccountBudgetsStack(scope: Construct, id: string, props: AwsAccountBudgetsStackProps)
+new management.SimpleAccountBudgetsStack(scope: Construct, id: string, props: SimpleAccountBudgetsStackProps)
 ```
 
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
-* **props** (<code>[management.AwsAccountBudgetsStackProps](#justinm-cdk-constructs-management-awsaccountbudgetsstackprops)</code>)  *No description*
+* **props** (<code>[management.SimpleAccountBudgetsStackProps](#justinm-cdk-constructs-management-awsaccountbudgetsstackprops)</code>)  *No description*
   * **notificationArns** (<code>Array<string></code>)  The Simple Notification Service (SNS) topics to publish stack related events. __*Default*__: notifications are not sent for this stack.
   * **parameters** (<code>Map<string, string></code>)  The set value pairs that represent the parameters passed to CloudFormation when this nested stack is created. __*Default*__: no user-defined parameters are passed to the nested stack
   * **removalPolicy** (<code>[RemovalPolicy](#aws-cdk-core-removalpolicy)</code>)  Policy to apply when the nested stack is removed. __*Default*__: RemovalPolicy.DESTROY
@@ -89,7 +89,7 @@ new management.AwsAccountBudgetsStack(scope: Construct, id: string, props: AwsAc
 
 
 
-## class AwsAccountCloudTrailStack  <a id="justinm-cdk-constructs-management-awsaccountcloudtrailstack"></a>
+## class SimpleAccountCloudTrailStack  <a id="justinm-cdk-constructs-management-awsaccountcloudtrailstack"></a>
 
 
 
@@ -104,7 +104,7 @@ __Extends__: [NestedStack](#aws-cdk-core-nestedstack)
 
 
 ```ts
-new management.AwsAccountCloudTrailStack(scope: Construct, id: string)
+new management.SimpleAccountCloudTrailStack(scope: Construct, id: string)
 ```
 
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
@@ -113,7 +113,7 @@ new management.AwsAccountCloudTrailStack(scope: Construct, id: string)
 
 
 
-## class AwsAccountStack  <a id="justinm-cdk-constructs-management-awsaccountstack"></a>
+## class SimpleAccountStack  <a id="justinm-cdk-constructs-management-awsaccountstack"></a>
 
 
 
@@ -128,12 +128,12 @@ __Extends__: [Stack](#aws-cdk-core-stack)
 
 
 ```ts
-new management.AwsAccountStack(scope: Construct, id: string, props: AwsAccountStackProps)
+new management.SimpleAccountStack(scope: Construct, id: string, props: SimpleAccountStackProps)
 ```
 
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
-* **props** (<code>[management.AwsAccountStackProps](#justinm-cdk-constructs-management-awsaccountstackprops)</code>)  *No description*
+* **props** (<code>[management.SimpleAccountStackProps](#justinm-cdk-constructs-management-awsaccountstackprops)</code>)  *No description*
   * **analyticsReporting** (<code>boolean</code>)  Include runtime versioning information in this Stack. __*Default*__: `analyticsReporting` setting of containing `App`, or value of 'aws:cdk:version-reporting' context key
   * **description** (<code>string</code>)  A description of the stack. __*Default*__: No description.
   * **env** (<code>[Environment](#aws-cdk-core-environment)</code>)  The AWS environment (account/region) where this stack will be deployed. __*Default*__: The environment of the containing `Stage` if available, otherwise create the stack will be environment-agnostic.
@@ -154,7 +154,7 @@ new management.AwsAccountStack(scope: Construct, id: string, props: AwsAccountSt
 
 
 
-## class AwsOktaSamlStack  <a id="justinm-cdk-constructs-management-awsoktasamlstack"></a>
+## class OktaSamlStack  <a id="justinm-cdk-constructs-management-awsoktasamlstack"></a>
 
 
 
@@ -169,7 +169,7 @@ __Extends__: [NestedStack](#aws-cdk-core-nestedstack)
 
 
 ```ts
-new management.AwsOktaSamlStack(scope: Construct, id: string, props: AwsOktaSamlProps)
+new management.OktaSamlStack(scope: Construct, id: string, props: AwsOktaSamlProps)
 ```
 
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
@@ -186,7 +186,7 @@ new management.AwsOktaSamlStack(scope: Construct, id: string, props: AwsOktaSaml
 
 
 
-## struct AwsVpcProps  <a id="justinm-cdk-constructs-infra-awsvpcprops"></a>
+## struct SimpleVpcProps  <a id="justinm-cdk-constructs-infra-awsvpcprops"></a>
 
 
 
@@ -201,7 +201,7 @@ Name | Type | Description
 
 
 
-## struct AwsAccountBudgetsStackProps  <a id="justinm-cdk-constructs-management-awsaccountbudgetsstackprops"></a>
+## struct SimpleAccountBudgetsStackProps  <a id="justinm-cdk-constructs-management-awsaccountbudgetsstackprops"></a>
 
 
 
@@ -219,7 +219,7 @@ Name | Type | Description
 
 
 
-## struct AwsAccountStackProps  <a id="justinm-cdk-constructs-management-awsaccountstackprops"></a>
+## struct SimpleAccountStackProps  <a id="justinm-cdk-constructs-management-awsaccountstackprops"></a>
 
 
 

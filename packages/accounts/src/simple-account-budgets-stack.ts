@@ -1,14 +1,14 @@
 import * as budgets from '@aws-cdk/aws-budgets';
 import * as cdk from '@aws-cdk/core';
 
-export interface AwsAccountBudgetsStackProps extends cdk.NestedStackProps {
+export interface SimpleAccountBudgetsStackProps {
   readonly budgetLimit: number;
   readonly emailAddresses: string[];
 }
 
-export class AwsAccountBudgetsStack extends cdk.NestedStack {
-  constructor(scope: cdk.Construct, id: string, props: AwsAccountBudgetsStackProps) {
-    super(scope, id, props);
+export class SimpleAccountBudgetsStack extends cdk.Construct {
+  constructor(scope: cdk.Construct, id: string, props: SimpleAccountBudgetsStackProps) {
+    super(scope, id);
 
     new budgets.CfnBudget(this, 'Budget', {
       budget: {

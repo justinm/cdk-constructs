@@ -3,15 +3,15 @@ import { Effect } from '@aws-cdk/aws-iam';
 import { SamlMetadataDocument } from '@aws-cdk/aws-iam/lib/saml-provider';
 import * as cdk from '@aws-cdk/core';
 
-export interface AwsOktaSamlProps extends cdk.NestedStackProps {
+export interface AwsOktaSamlProps {
   readonly metadataDocument?: SamlMetadataDocument;
-  readonly developerPolicies: iam.PolicyStatement[];
+  readonly developerPolicies?: iam.PolicyStatement[];
   readonly adminForDeveloper?: boolean;
 }
 
-export class AwsOktaSamlStack extends cdk.NestedStack {
+export class OktaSamlStack extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: AwsOktaSamlProps) {
-    super(scope, id, props);
+    super(scope, id);
 
     const oktaUser = new iam.User(this, 'OktaUser', {
       userName: 'okta-gateway-user',
@@ -76,7 +76,7 @@ export class AwsOktaSamlStack extends cdk.NestedStack {
         developerRole.addManagedPolicy(adminPolicy);
       }
 
-      props.developerPolicies.forEach((policy) => developerRole.addToPolicy(policy));
+      props.developerPolicies?.forEach((policy) => developerRole.addToPolicy(policy));
 
       developerRole.addToPolicy(
         new iam.PolicyStatement({

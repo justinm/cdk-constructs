@@ -3,11 +3,12 @@ import * as iam from '@aws-cdk/aws-iam';
 import * as s3 from '@aws-cdk/aws-s3';
 import * as cdk from '@aws-cdk/core';
 
-export class AwsAccountCloudTrailStack extends cdk.NestedStack {
+export class SimpleAccountCloudTrail extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string) {
     super(scope, id);
 
     const cloudTrailBucket = new s3.Bucket(this, 'CloudTrail');
+    const {account} = cdk.Stack.of(this);
 
     cloudTrailBucket.addToResourcePolicy(
       new iam.PolicyStatement({
@@ -20,7 +21,7 @@ export class AwsAccountCloudTrailStack extends cdk.NestedStack {
     cloudTrailBucket.addToResourcePolicy(
       new iam.PolicyStatement({
         actions: ['s3:PutObject'],
-        resources: [cloudTrailBucket.arnForObjects(`AWSLogs/${this.account}/*`)],
+        resources: [cloudTrailBucket.arnForObjects(`AWSLogs/${account}/*`)],
         principals: [new iam.ServicePrincipal('cloudtrail.amazonaws.com')],
       }),
     );

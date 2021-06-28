@@ -872,7 +872,7 @@
   },
   "name": "@justinm/cdk-constructs",
   "readme": {
-    "markdown": "# Welcome to your CDK TypeScript project!\n\nThis is a blank project for TypeScript development with CDK.\n\nThe `cdk.json` file tells the CDK Toolkit how to execute your app.\n\n## Useful commands\n\n * `npm run build`   compile typescript to js\n * `npm run watch`   watch for changes and compile\n * `npm run test`    perform the jest unit tests\n * `cdk deploy`      deploy this stack to your default AWS account/region\n * `cdk diff`        compare deployed stack with current state\n * `cdk synth`       emits the synthesized CloudFormation template\n"
+    "markdown": "# justinm/cdk-constructs\n\n... a collection of CDK constructs for managing AWS infrastructure.\n\n![Build Status](https://github.com/justinm/cdk-constructs/actions/workflows/build.yml/badge.svg)\n![License](https://img.shields.io/github/license/justinm/cdk-constructs)\n![Node](https://img.shields.io/node/v/@justinm/cdk-constructs/latest)\n![Python](https://img.shields.io/pypi/pyversions/justinm.cdk-constructs)\n\n## Installing\n\nNodeJS\n```shell\nyarn add @justinm/cdk-constructs\n\nnpm install @justinm/cdk-constructs\n```\n\nPython\n```shell\npip3 install justinm.cdk-constructs\n```\n\n## API\n\nConstruct APIs are available [here](./API.md).\n"
   },
   "repository": {
     "type": "git",
@@ -903,13 +903,13 @@
     }
   },
   "types": {
-    "@justinm/cdk-constructs.infra.AwsVpc": {
+    "@justinm/cdk-constructs.infra.SimpleVpc": {
       "assembly": "@justinm/cdk-constructs",
       "base": "@aws-cdk/core.Construct",
-      "fqn": "@justinm/cdk-constructs.infra.AwsVpc",
+      "fqn": "@justinm/cdk-constructs.infra.SimpleVpc",
       "initializer": {
         "locationInModule": {
-          "filename": "src/infra/aws-vpc.ts",
+          "filename": "src/infra/simple-vpc.ts",
           "line": 13
         },
         "parameters": [
@@ -928,23 +928,23 @@
           {
             "name": "props",
             "type": {
-              "fqn": "@justinm/cdk-constructs.infra.AwsVpcProps"
+              "fqn": "@justinm/cdk-constructs.infra.SimpleVpcProps"
             }
           }
         ]
       },
       "kind": "class",
       "locationInModule": {
-        "filename": "src/infra/aws-vpc.ts",
+        "filename": "src/infra/simple-vpc.ts",
         "line": 10
       },
-      "name": "AwsVpc",
+      "name": "SimpleVpc",
       "namespace": "infra",
       "properties": [
         {
           "immutable": true,
           "locationInModule": {
-            "filename": "src/infra/aws-vpc.ts",
+            "filename": "src/infra/simple-vpc.ts",
             "line": 11
           },
           "name": "vpc",
@@ -954,23 +954,23 @@
         }
       ]
     },
-    "@justinm/cdk-constructs.infra.AwsVpcProps": {
+    "@justinm/cdk-constructs.infra.SimpleVpcProps": {
       "assembly": "@justinm/cdk-constructs",
       "datatype": true,
-      "fqn": "@justinm/cdk-constructs.infra.AwsVpcProps",
+      "fqn": "@justinm/cdk-constructs.infra.SimpleVpcProps",
       "kind": "interface",
       "locationInModule": {
-        "filename": "src/infra/aws-vpc.ts",
+        "filename": "src/infra/simple-vpc.ts",
         "line": 4
       },
-      "name": "AwsVpcProps",
+      "name": "SimpleVpcProps",
       "namespace": "infra",
       "properties": [
         {
           "abstract": true,
           "immutable": true,
           "locationInModule": {
-            "filename": "src/infra/aws-vpc.ts",
+            "filename": "src/infra/simple-vpc.ts",
             "line": 5
           },
           "name": "cidr",
@@ -982,7 +982,7 @@
           "abstract": true,
           "immutable": true,
           "locationInModule": {
-            "filename": "src/infra/aws-vpc.ts",
+            "filename": "src/infra/simple-vpc.ts",
             "line": 7
           },
           "name": "enableNatGateway",
@@ -995,7 +995,7 @@
           "abstract": true,
           "immutable": true,
           "locationInModule": {
-            "filename": "src/infra/aws-vpc.ts",
+            "filename": "src/infra/simple-vpc.ts",
             "line": 6
           },
           "name": "maxAxs",
@@ -1006,13 +1006,13 @@
         }
       ]
     },
-    "@justinm/cdk-constructs.management.AwsAccountBudgetsStack": {
+    "@justinm/cdk-constructs.management.SimpleAccountBudgetsStack": {
       "assembly": "@justinm/cdk-constructs",
       "base": "@aws-cdk/core.NestedStack",
-      "fqn": "@justinm/cdk-constructs.management.AwsAccountBudgetsStack",
+      "fqn": "@justinm/cdk-constructs.management.SimpleAccountBudgetsStack",
       "initializer": {
         "locationInModule": {
-          "filename": "src/management/aws-account-budgets.ts",
+          "filename": "src/management/simple-account-budgets-stack.ts",
           "line": 10
         },
         "parameters": [
@@ -1031,39 +1031,39 @@
           {
             "name": "props",
             "type": {
-              "fqn": "@justinm/cdk-constructs.management.AwsAccountBudgetsStackProps"
+              "fqn": "@justinm/cdk-constructs.management.SimpleAccountBudgetsStackProps"
             }
           }
         ]
       },
       "kind": "class",
       "locationInModule": {
-        "filename": "src/management/aws-account-budgets.ts",
+        "filename": "src/management/simple-account-budgets-stack.ts",
         "line": 9
       },
-      "name": "AwsAccountBudgetsStack",
+      "name": "SimpleAccountBudgetsStack",
       "namespace": "management"
     },
-    "@justinm/cdk-constructs.management.AwsAccountBudgetsStackProps": {
+    "@justinm/cdk-constructs.management.SimpleAccountBudgetsStackProps": {
       "assembly": "@justinm/cdk-constructs",
       "datatype": true,
-      "fqn": "@justinm/cdk-constructs.management.AwsAccountBudgetsStackProps",
+      "fqn": "@justinm/cdk-constructs.management.SimpleAccountBudgetsStackProps",
       "interfaces": [
         "@aws-cdk/core.NestedStackProps"
       ],
       "kind": "interface",
       "locationInModule": {
-        "filename": "src/management/aws-account-budgets.ts",
+        "filename": "src/management/simple-account-budgets-stack.ts",
         "line": 4
       },
-      "name": "AwsAccountBudgetsStackProps",
+      "name": "SimpleAccountBudgetsStackProps",
       "namespace": "management",
       "properties": [
         {
           "abstract": true,
           "immutable": true,
           "locationInModule": {
-            "filename": "src/management/aws-account-budgets.ts",
+            "filename": "src/management/simple-account-budgets-stack.ts",
             "line": 5
           },
           "name": "budgetLimit",
@@ -1075,7 +1075,7 @@
           "abstract": true,
           "immutable": true,
           "locationInModule": {
-            "filename": "src/management/aws-account-budgets.ts",
+            "filename": "src/management/simple-account-budgets-stack.ts",
             "line": 6
           },
           "name": "emailAddresses",
@@ -1090,13 +1090,13 @@
         }
       ]
     },
-    "@justinm/cdk-constructs.management.AwsAccountCloudTrailStack": {
+    "@justinm/cdk-constructs.management.SimpleAccountCloudTrailStack": {
       "assembly": "@justinm/cdk-constructs",
       "base": "@aws-cdk/core.NestedStack",
-      "fqn": "@justinm/cdk-constructs.management.AwsAccountCloudTrailStack",
+      "fqn": "@justinm/cdk-constructs.management.SimpleAccountCloudTrailStack",
       "initializer": {
         "locationInModule": {
-          "filename": "src/management/aws-account-cloudtrail.ts",
+          "filename": "src/management/simple-account-cloudtrail.ts",
           "line": 7
         },
         "parameters": [
@@ -1116,19 +1116,19 @@
       },
       "kind": "class",
       "locationInModule": {
-        "filename": "src/management/aws-account-cloudtrail.ts",
+        "filename": "src/management/simple-account-cloudtrail.ts",
         "line": 6
       },
-      "name": "AwsAccountCloudTrailStack",
+      "name": "SimpleAccountCloudTrailStack",
       "namespace": "management"
     },
-    "@justinm/cdk-constructs.management.AwsAccountStack": {
+    "@justinm/cdk-constructs.management.SimpleAccountStack": {
       "assembly": "@justinm/cdk-constructs",
       "base": "@aws-cdk/core.Stack",
-      "fqn": "@justinm/cdk-constructs.management.AwsAccountStack",
+      "fqn": "@justinm/cdk-constructs.management.SimpleAccountStack",
       "initializer": {
         "locationInModule": {
-          "filename": "src/management/aws-account-stack.ts",
+          "filename": "src/management/simple-account-stack.ts",
           "line": 9
         },
         "parameters": [
@@ -1147,34 +1147,34 @@
           {
             "name": "props",
             "type": {
-              "fqn": "@justinm/cdk-constructs.management.AwsAccountStackProps"
+              "fqn": "@justinm/cdk-constructs.management.SimpleAccountStackProps"
             }
           }
         ]
       },
       "kind": "class",
       "locationInModule": {
-        "filename": "src/management/aws-account-stack.ts",
+        "filename": "src/management/simple-account-stack.ts",
         "line": 8
       },
-      "name": "AwsAccountStack",
+      "name": "SimpleAccountStack",
       "namespace": "management"
     },
-    "@justinm/cdk-constructs.management.AwsAccountStackProps": {
+    "@justinm/cdk-constructs.management.SimpleAccountStackProps": {
       "assembly": "@justinm/cdk-constructs",
       "datatype": true,
-      "fqn": "@justinm/cdk-constructs.management.AwsAccountStackProps",
+      "fqn": "@justinm/cdk-constructs.management.SimpleAccountStackProps",
       "interfaces": [
         "@aws-cdk/core.StackProps",
-        "@justinm/cdk-constructs.management.AwsAccountBudgetsStackProps",
+        "@justinm/cdk-constructs.management.SimpleAccountBudgetsStackProps",
         "@justinm/cdk-constructs.management.AwsOktaSamlProps"
       ],
       "kind": "interface",
       "locationInModule": {
-        "filename": "src/management/aws-account-stack.ts",
+        "filename": "src/management/simple-account-stack.ts",
         "line": 6
       },
-      "name": "AwsAccountStackProps",
+      "name": "SimpleAccountStackProps",
       "namespace": "management"
     },
     "@justinm/cdk-constructs.management.AwsOktaSamlProps": {
@@ -1186,7 +1186,7 @@
       ],
       "kind": "interface",
       "locationInModule": {
-        "filename": "src/management/aws-okta-saml-stack.ts",
+        "filename": "src/management/okta-saml-stack.ts",
         "line": 6
       },
       "name": "AwsOktaSamlProps",
@@ -1196,10 +1196,24 @@
           "abstract": true,
           "immutable": true,
           "locationInModule": {
-            "filename": "src/management/aws-okta-saml-stack.ts",
+            "filename": "src/management/okta-saml-stack.ts",
+            "line": 9
+          },
+          "name": "adminForDeveloper",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/management/okta-saml-stack.ts",
             "line": 8
           },
           "name": "developerPolicies",
+          "optional": true,
           "type": {
             "collection": {
               "elementtype": {
@@ -1213,20 +1227,7 @@
           "abstract": true,
           "immutable": true,
           "locationInModule": {
-            "filename": "src/management/aws-okta-saml-stack.ts",
-            "line": 9
-          },
-          "name": "adminForDeveloper",
-          "optional": true,
-          "type": {
-            "primitive": "boolean"
-          }
-        },
-        {
-          "abstract": true,
-          "immutable": true,
-          "locationInModule": {
-            "filename": "src/management/aws-okta-saml-stack.ts",
+            "filename": "src/management/okta-saml-stack.ts",
             "line": 7
           },
           "name": "metadataDocument",
@@ -1237,13 +1238,13 @@
         }
       ]
     },
-    "@justinm/cdk-constructs.management.AwsOktaSamlStack": {
+    "@justinm/cdk-constructs.management.OktaSamlStack": {
       "assembly": "@justinm/cdk-constructs",
       "base": "@aws-cdk/core.NestedStack",
-      "fqn": "@justinm/cdk-constructs.management.AwsOktaSamlStack",
+      "fqn": "@justinm/cdk-constructs.management.OktaSamlStack",
       "initializer": {
         "locationInModule": {
-          "filename": "src/management/aws-okta-saml-stack.ts",
+          "filename": "src/management/okta-saml-stack.ts",
           "line": 13
         },
         "parameters": [
@@ -1269,13 +1270,13 @@
       },
       "kind": "class",
       "locationInModule": {
-        "filename": "src/management/aws-okta-saml-stack.ts",
+        "filename": "src/management/okta-saml-stack.ts",
         "line": 12
       },
-      "name": "AwsOktaSamlStack",
+      "name": "OktaSamlStack",
       "namespace": "management"
     }
   },
-  "version": "0.1.0",
-  "fingerprint": "ENzppdvUyvI30bFQ5Z34QYy2DcBHPF9Y8YO44R2+i/o="
+  "version": "0.1.1",
+  "fingerprint": "3wh6SfluDQhJqh61a0AvJVo9O82fuB8PkD9lRupyYBw="
 }

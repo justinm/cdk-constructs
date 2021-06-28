@@ -1,0 +1,79 @@
+{
+  "name": "@justinm/cdk-accounts",
+  "version": "0.1.1",
+  "license": "MIT",
+  "author": {
+    "name": "Justin McCormick",
+    "email": "me@justinmccormick.com",
+    "url": "https://justinmccormick.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinm/cdk-constructs.git"
+  },
+  "main": "lib/index.ts",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "cdkdx build",
+    "watch": "cdkdx build -w",
+    "test": "cdkdx test",
+    "lint": "cdkdx lint",
+    "upgrade:cdk": "cdkdx upgrade-cdk",
+    "package": "cdkdx package",
+    "docgen": "cdkdx docgen",
+    "release:npm": "cdkdx release npm",
+    "release:pypi": "cdkdx release pypi"
+  },
+  "files": [
+    "lib"
+  ],
+  "jsii": {
+    "outdir": "dist",
+    "tsc": {
+      "outDir": "lib",
+      "rootDir": "src"
+    },
+    "excludeTypescript": [
+      "src/lambdas"
+    ],
+    "targets": {
+      "python": {
+        "distName": "justinm.cdk-accounts",
+        "module": "justinm.cdk_accounts"
+      }
+    }
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.110.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-budgets": "^1.110.0",
+    "@aws-cdk/aws-cloudtrail": "^1.110.0",
+    "@aws-cdk/aws-cloudwatch": "^1.110.0",
+    "@aws-cdk/aws-ec2": "^1.110.0",
+    "@aws-cdk/aws-iam": "^1.110.0",
+    "@aws-cdk/aws-logs": "^1.110.0",
+    "@aws-cdk/aws-route53": "^1.110.0",
+    "@aws-cdk/aws-s3": "^1.110.0",
+    "@aws-cdk/aws-sns": "^1.110.0",
+    "@aws-cdk/core": "1.110.0",
+    "source-map-support": "^0.5.16"
+  },
+  "peerDependencies": {
+    "@aws-cdk/aws-budgets": "^1.110.0",
+    "@aws-cdk/aws-cloudtrail": "^1.110.0",
+    "@aws-cdk/aws-cloudwatch": "^1.110.0",
+    "@aws-cdk/aws-ec2": "^1.110.0",
+    "@aws-cdk/aws-iam": "^1.110.0",
+    "@aws-cdk/aws-logs": "^1.110.0",
+    "@aws-cdk/aws-route53": "^1.110.0",
+    "@aws-cdk/aws-s3": "^1.110.0",
+    "@aws-cdk/aws-sns": "^1.110.0",
+    "@aws-cdk/core": "1.110.0"
+  },
+  "bundleDependencies": [
+    "source-map-support"
+  ]
+}
